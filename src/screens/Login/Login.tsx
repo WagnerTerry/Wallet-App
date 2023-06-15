@@ -3,7 +3,8 @@ import { SafeAreaView, Text } from "react-native";
 
 import { ButtonSocialGoogle } from "../../components/ButtonSocialGoogle/ButtonSocialGoogle";
 import { ButtonSocial } from "../../components/ButtonSocial/ButtonSocial";
-import { Input } from "../../components/Input/Input";
+
+import Input from "../../components/Input/Input";
 
 import {
     Container,
@@ -30,7 +31,8 @@ const Login: React.FC = () => {
                     </ViewButton>
                 </ContentHeader>
                 <ContentBody>
-                    <Input name="email"/>
+                    <Input leftIcon />
+                    <Input rightIcon />
                 </ContentBody>
                 <ContentFooter></ContentFooter>
             </Container>

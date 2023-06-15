@@ -1,70 +1,36 @@
-import React, {
-    forwardRef,
-    useCallback,
-    useState,
-    useImperativeHandle,
-    useRef,
-    useEffect,
-} from "react";
-import { Text, TextInputProps } from "react-native";
-import { useField } from "@unform/core";
+import React from "react";
 import { Ionicons } from "@expo/vector-icons";
+import { Container, InputContainer } from "./styles";
 import { useTheme } from "styled-components";
 
-import { Container, IconContainer, InputText } from "./styles";
-
-interface InputRef {
-    focus(): void;
+interface InputProps {
+    rightIcon?: boolean;
+    leftIcon?: boolean;
 }
 
-interface InputValueReference {
-    Value: string;
-}
-
-interface InputProps extends TextInputProps {
-    name: string;
-    value?: string;
-    iconName?: React.ComponentProps<typeof Ionicons>["name"];
-    containerStyle?: { [key: string]: string | number };
-}
-
-const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = ({
-    iconName,
-    name,
-    value,
-    containerStyle,
-    ...rest
-}) => {
+const Input: React.FC<InputProps> = ({ rightIcon, leftIcon }) => {
     const theme = useTheme();
-
-    const [hasErrors, setHasErrors] = useState(false);
-    const [isFocused, setIsFocused] = useState(false);
-    const [isFilled, setIsFilled] = useState(false);
-
     return (
-        <Container style={containerStyle}>
-            <IconContainer
-                isFocused={isFocused}
-                isFilled={isFilled}
-                hasError={hasErrors}
-            />
-            <Ionicons
-                name={iconName}
-                size={25}
-                color={
-                    isFocused || hasErrors || isFilled
-                        ? theme?.COLORS.BLUE1
-                        : theme?.COLORS.GRAY5
-                }
-            />
-
-            <InputText
-                isFocused={isFocused}
-                isFilled={isFilled}
-                hasError={hasErrors}
-            />
+        <Container>
+            {leftIcon && (
+                <Ionicons
+                    name="mail-outline"
+                    size={20}
+                    color={theme?.COLORS.TEXTDARK}
+                    style={{ padding: 5, marginLeft: 10 }}
+                />
+            )}
+            <InputContainer />
+            {rightIcon && (
+                <Ionicons
+                    name="lock-closed-outline"
+                    size={20}
+                    color={theme?.COLORS.TEXTDARK}
+                    style={{ padding: 5, marginRight: 10 }}
+                />
+            )}
         </Container>
     );
 };
 
-export { Input };
+export default Input;

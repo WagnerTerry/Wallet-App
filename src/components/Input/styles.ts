@@ -1,71 +1,21 @@
-import styled, { css } from "styled-components/native";
-import { TextInput, ViewProps } from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
-
-interface IContainerProps extends ViewProps {
-    hasError: boolean;
-    isFocused: boolean;
-    isFilled?: boolean;
-}
-
-interface ITextContainerProps extends ViewProps {
-    hasError: boolean;
-    isFocused: boolean;
-    isFilled?: boolean;
-}
+import styled from "styled-components/native";
 
 export const Container = styled.View`
-    width: 85%;
-    height: ${RFValue(50)}px;
-    flex-direction: row;
-    margin-bottom: ${RFValue(10)}px;
-`;
-
-export const IconContainer = styled.View<IContainerProps>`
-    width: ${RFValue(55)}px;
-    height: ${RFValue(50)}px;
+    width: 100%;
+    height: 50px;
+    padding: 0 12px;
+    border-radius: 8px;
     justify-content: center;
+    background-color: #ccc;
+    margin-top: 10px;
     align-items: center;
-
-    ${({ isFocused, isFilled }) =>
-        (isFocused || isFilled) &&
-        css`
-            border-bottom-width: ${RFValue(2)}px;
-            border-bottom-color: blue;
-        `}
-
-    ${({ hasError }) =>
-        hasError &&
-        css`
-            border-bottom-color: red;
-        `}
-
-    margin-right: ${RFValue(3)}px;
-    border-top-left-radius: ${RFValue(5)}px;
-    border-bottom-left-radius: ${RFValue(5)}px;
-    background-color: blue;
+    flex-direction: row;
 `;
 
-export const InputText = styled(TextInput)<ITextContainerProps>`
+export const InputContainer = styled.TextInput`
+    border: 0;
     flex: 1;
-    font-size: ${RFValue(23)}px;
-    border-top-right-radius: ${RFValue(5)}px;
-    border-bottom-right-radius: ${RFValue(5)}px;
-    color: #ccc;
-    background-color: gray;
-
-    ${({ isFocused, isFilled }) =>
-        (isFocused || isFilled) &&
-        css`
-            border-bottom-width: ${RFValue(2)}px;
-            border-bottom-color: blue;
-        `}
-
-    ${({ hasError }) =>
-        hasError &&
-        css`
-            border-bottom-color: red;
-        `}
-
-    padding: 0 ${RFValue(10)}px;
+    height: 45px;
+    border-radius: 8px;
+    font-size: 14px;
 `;
