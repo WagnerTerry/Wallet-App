@@ -1,9 +1,20 @@
 import React from "react";
+import { RectButtonProps } from "react-native-gesture-handler";
+import { Button, IconGoogle, Title } from "./styles";
 
-import { Container } from "./styles";
+import logoGoogle from "../../assets/google.png";
 
-const ButtonSocialGoogle: React.FC = () => {
-    return <Container></Container>;
+interface Props extends RectButtonProps {
+    title: string;
+}
+
+const ButtonSocialGoogle: React.FC<Props> = ({ title, ...rest }) => {
+    return (
+        <Button {...rest}>
+            <IconGoogle source={logoGoogle} resizeMode="contain" />
+            <Title>{title}</Title>
+        </Button>
+    );
 };
 
 export { ButtonSocialGoogle };
