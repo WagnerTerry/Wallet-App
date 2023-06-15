@@ -3,6 +3,11 @@
     "name": "wallet-app",
     "slug": "wallet-app",
     "version": "1.0.0",
+    "splash": {
+        "image": "./assets/teste.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#fff"
+    },
     "assetBundlePatterns": [
       "**/*"
     ]
