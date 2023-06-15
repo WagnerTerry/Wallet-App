@@ -1,6 +1,7 @@
 import * as SplashScreen from 'expo-splash-screen';
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {Text, View} from  'react-native'
+import {ThemeProvider} from 'styled-components/native'
 import {
     useFonts,
     Poppins_300Light,
@@ -11,6 +12,8 @@ import {
 } from "@expo-google-fonts/poppins"
 import {DMSans_400Regular} from '@expo-google-fonts/dm-sans'
 import {DMSerifDisplay_400Regular} from "@expo-google-fonts/dm-serif-display"
+
+import COLORS from '../src/styles/theme'
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,6 +38,7 @@ const App: React.FC = () => {
     })
 
     return (
+        <ThemeProvider theme={COLORS}>
         <View
             style={{
                 flex: 1,
@@ -44,6 +48,7 @@ const App: React.FC = () => {
         >
             <Text>Wallet Apps</Text>
         </View>
+        </ThemeProvider>
     )
 }
 
