@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView, Text } from "react-native";
 
 import { ButtonSocialGoogle } from "../../components/ButtonSocialGoogle/ButtonSocialGoogle";
@@ -18,8 +18,16 @@ import {
 } from "./styles";
 import { useTheme } from "styled-components";
 
-const Login: React.FC = () => {
+export const Login = () => {
     const theme = useTheme();
+    const [loading, setLoading] = useState(false)
+
+    function onPressButton() {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 2000)
+    }
     return (
         <SafeAreaView>
             <Container>
@@ -49,12 +57,10 @@ const Login: React.FC = () => {
                         placeholder="Digite sua senha"
                     />
 
-                    <Button title="Entrar" onPress={() => {}} />
+                    <Button title="Entrar" variant="primary" onPress={onPressButton} style={{ marginBottom: 20 }} />
                 </ContentBody>
                 <ContentFooter></ContentFooter>
             </Container>
         </SafeAreaView>
     );
 };
-
-export { Login };
