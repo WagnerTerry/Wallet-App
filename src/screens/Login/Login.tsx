@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SafeAreaView, Text } from "react-native";
+import { KeyboardAvoidingView } from "react-native";
 
 import { ButtonSocialGoogle } from "../../components/ButtonSocialGoogle/ButtonSocialGoogle";
 import { ButtonSocial } from "../../components/ButtonSocial/ButtonSocial";
@@ -36,7 +36,10 @@ export const Login = () => {
         }, 2000)
     }
     return (
-        <SafeAreaView>
+        <KeyboardAvoidingView
+            behavior="position"
+            enabled
+        >
             <Container>
                 <ContentHeader>
                     <Title>Seja bem vindo(a) {"\n"} a Wallet App</Title>
@@ -91,6 +94,6 @@ export const Login = () => {
 
                 </ContentFooter>
             </Container>
-        </SafeAreaView>
+        </KeyboardAvoidingView>
     );
 };

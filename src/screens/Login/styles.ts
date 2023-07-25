@@ -3,7 +3,6 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { Pressable } from "react-native";
 
 export const Container = styled.View`
-    height: 100%;
     padding: ${RFValue(20)}px;
 `;
 export const ContentHeader = styled.View`
@@ -16,10 +15,7 @@ export const ContentBody = styled.View``;
 export const ContentFooter = styled.View`
     align-items: center;
     justify-content: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 30px;
+    margin-top: 50px;
 `;
 
 export const Title = styled.Text`
