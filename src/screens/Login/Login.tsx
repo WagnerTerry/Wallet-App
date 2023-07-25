@@ -15,6 +15,10 @@ import {
     Title,
     Description,
     ViewButton,
+    ButtonSignUp,
+    TitleButtonSignUp1,
+    TitleButtonSignUp2
+
 } from "./styles";
 import { useTheme } from "styled-components";
 
@@ -68,7 +72,13 @@ export const Login = () => {
 
                     <Button title="Entrar" variant="primary" onPress={onPressButton} style={{ marginBottom: 20 }} />
                 </ContentBody>
-                <ContentFooter></ContentFooter>
+                <ContentFooter>
+                    <ButtonSignUp>
+                        <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
+                        <TitleButtonSignUp2>Cadastre-se</TitleButtonSignUp2>
+                    </ButtonSignUp>
+
+                </ContentFooter>
             </Container>
         </SafeAreaView>
     );
