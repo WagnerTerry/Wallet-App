@@ -17,7 +17,10 @@ import {
     ViewButton,
     ButtonSignUp,
     TitleButtonSignUp1,
-    TitleButtonSignUp2
+    TitleButtonSignUp2,
+    ContentForgotPassword,
+    ContentButtonForgotPassword,
+    ContentTitleForgotPassword
 
 } from "./styles";
 import { useTheme } from "styled-components";
@@ -70,10 +73,18 @@ export const Login = () => {
                         placeholder="Digite sua senha"
                     />
 
+                    <ContentForgotPassword>
+                        <ContentButtonForgotPassword onPress={() => { }}>
+                            <ContentTitleForgotPassword>
+                                Recuperar Senha
+                            </ContentTitleForgotPassword>
+                        </ContentButtonForgotPassword>
+                    </ContentForgotPassword>
+
                     <Button title="Entrar" variant="primary" onPress={onPressButton} style={{ marginBottom: 20 }} />
                 </ContentBody>
                 <ContentFooter>
-                    <ButtonSignUp>
+                    <ButtonSignUp onPress={() => { }}>
                         <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
                         <TitleButtonSignUp2>Cadastre-se</TitleButtonSignUp2>
                     </ButtonSignUp>

@@ -52,3 +52,23 @@ export const TitleButtonSignUp2 = styled.Text`
     margin-left: 10px;
     color: blue;
 `;
+
+export const ContentForgotPassword = styled.View`
+    width: 100%;
+    margin-top: 20px;
+    align-items: flex-end;
+    padding: 20px;
+`
+
+export const ContentButtonForgotPassword = styled(Pressable)`
+    align-items: center;
+    justify-content: flex-end;
+
+`;
+
+export const ContentTitleForgotPassword = styled.Text`
+    align-items: flex-end;
+    font-size: 17px;
+    color: gray;
+
+`;
